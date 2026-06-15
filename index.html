@@ -5,25 +5,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MediTurno - Turnos Online</title>
 
-  <href rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Toastify para notificaciones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- SweetAlert2 para los formularios y alertas -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Hoja de estilo -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Script principal -->
+    <script defer src="app.js"></script>
+
 </head>
 <body>
 
-  <!-- Header principal -->
-  <header>
-    <h1>MediTurno</h1>
-    <p>Centro Médico Integral</p>
-  </header>
+    <!-- Header principal -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icono">
+                    <i class="fa-solid fa-hospital-user"></i>
+                </div>
+            <div>
+                <p class="logo-nombre">MediTurno</p>
+                <p class="logo-sub">Centro Médico Integral</p>
+            </div>
+            </div>
+        <div class="header-telefono">
+            <i class="fa-solid fa-phone"></i>
+            <span>0800-333-MEDI</span>
+        </div>
+        </div>
+    </header>
 
-  <!-- Contenido principal -->
-  <main>
-    <h2>Pedí tu turno online</h2>
-    <p>Seleccioná especialidad, médico y horario.</p>
-  </main>
+    <!-- Seccion hero con titulo principal -->
+    <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1 class="hero-titulo">Pedí tu turno <span>en minutos</span></h1>
+        <p class="hero-subtitulo">Sin esperas telefónicas. Elegís especialidad, médico y horario a tu conveniencia.</p>
+      </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <strong>+30</strong>
+                <span>Especialistas</span>
+            </div>
+        <div class="stat-linea"></div>
+        <div class="stat">
+            <strong>8</strong>
+            <span>Especialidades</span>
+        </div>
+        <div class="stat-linea"></div>
+        <div class="stat">
+          <strong>Lun–Vie</strong>
+          <span>Atención</span>
+        </div>
+      </div>
+    </div>
+    </section>
+  <!-- Indicador de pasos -->
+    <div class="stepper-wrap">
+        <div class="stepper">
+            <div class="paso-indicador activo" id="step1">
+                <div class="paso-circulo"><i class="fa-solid fa-stethoscope"></i></div>
+                <span>Especialidad</span>
+            </div>
+      <div class="paso-linea" id="linea1"></div>
+      <div class="paso-indicador" id="step2">
+        <div class="paso-circulo"><i class="fa-solid fa-user-doctor"></i></div>
+        <span>Médico</span>
+      </div>
+      <div class="paso-linea" id="linea2"></div>
+      <div class="paso-indicador" id="step3">
+        <div class="paso-circulo"><i class="fa-solid fa-calendar-check"></i></div>
+        <span>Horario</span>
+      </div>
+      <div class="paso-linea" id="linea3"></div>
+      <div class="paso-indicador" id="step4">
+        <div class="paso-circulo"><i class="fa-solid fa-circle-check"></i></div>
+            <span>Confirmación</span>
+            </div>
+        </div>
+    </div>
+<!-- Paso 1: elegir especialidad -->
+    <main class="contenido-principal">
+    <section id="paso1">
+      <div class="seccion-titulo">
+        <h2>¿Qué especialidad necesitás?</h2>
+        <p>Seleccioná la especialidad médica para tu consulta</p>
+      </div>
+      <div class="grilla-especialidades" id="grillaespecialidades">
+        <!-- Las cards se generan con JavaScript -->
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2025 MediTurno</p>
-  </footer>
+    <!-- Paso 2: elegir médico -->
+    <section id="paso2" class="oculto">
+      <div class="seccion-titulo">
+        <h2>Elegí tu médico</h2>
+        <p>Todos nuestros especialistas están certificados y matriculados</p>
+      </div>
+      <div class="grilla-medicos" id="grillamedicos">
+        <!-- Las cards se generan con JavaScript -->
+      </div>
+      <button class="btn-volver" id="btnVolverPaso1">
+        <i class="fa-solid fa-arrow-left"></i> Volver a especialidades
+      </button>
+    </section>
+
+    <!-- Paso 3: elegir día y horario -->
+    <section id="paso3" class="oculto">
+      <div class="seccion-titulo">
+        <h2>Seleccioná día y horario</h2>
+        <p>Elegí la fecha y el turno que mejor te quede</p>
+      </div>
+      <div class="dias-contenedor">
+        <h3 class="subtitulo-seccion"><i class="fa-solid fa-calendar-days"></i> Próximos días disponibles</h3>
+        <div class="grilla-dias" id="grillaDias"></div>
+      </div>
+      <div class="turnos-contenedor oculto" id="contenedorTurnos">
+        <h3 class="subtitulo-seccion"><i class="fa-solid fa-clock"></i> Horarios disponibles</h3>
+        <div class="grilla-turnos" id="grillaTurnos"></div>
+        <button class="btn-continuar oculto" id="btnContinuar">
+          Continuar <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+      <button class="btn-volver" id="btnVolverPaso2">
+        <i class="fa-solid fa-arrow-left"></i> Volver a médicos
+      </button>
+    </section>
+
+    <!-- Paso 4: comprobante final -->
+    <section id="paso4" class="oculto">
+      <div id="contenedorComprobante"></div>
+    </section>
+
+      </main>
+<footer>
+    <p>© 2025 MediTurno · Centro Médico Integral · Córdoba, Argentina</p>
+</footer>
 
 </body>
 </html>
