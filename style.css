@@ -1,0 +1,34 @@
+/*MediTurno - Estilos principales*/
+
+/* Variables de color y tipografía */
+:root {
+  --fondo: #f0f4f8;
+  --blanco: #ffffff;
+  --texto: #1a2332;
+  --texto-suave: #64748b;
+  --texto-claro: #94a3b8;
+  --borde: #e2e8f0;
+  --violeta: #4f46e5;
+  --violeta-oscuro: #3730a3;
+  --violeta-claro: #eef2ff;
+  --verde: #10b981;
+  --sombra: 0 2px 12px rgba(0,0,0,0.08);
+  --sombra-grande: 0 8px 30px rgba(0,0,0,0.12);
+  --radio: 14px;
+  --radio-grande: 20px;
+  --transicion: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}

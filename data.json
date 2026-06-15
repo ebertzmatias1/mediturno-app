@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "especialidad": "Cardiología",
+    "icono": "fa-heart-pulse",
+    "gradiente": "linear-gradient(135deg, #e74c3c, #c0392b)",
+    "colorAcento": "#e74c3c",
+    "descripcion": "Diagnóstico y tratamiento de enfermedades del corazón y sistema cardiovascular.",
+    "medicos": [
+      {
+        "id": 101,
+        "nombre": "Dra. Laura Gómez",
+        "matricula": "MP 18432",
+        "experiencia": "12 años de experiencia",
+        "atencion": "Lun · Mié · Vie",
+        "turnos": ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "14:00", "14:30", "15:00", "15:30"]
+      },
+      {
+        "id": 102,
+        "nombre": "Dr. Carlos Ibáñez",
+        "matricula": "MP 22107",
+        "experiencia": "20 años de experiencia",
+        "atencion": "Mar · Jue",
+        "turnos": ["09:00", "09:30", "10:00", "10:30", "11:00", "15:00", "15:30", "16:00"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "especialidad": "Clínica Médica",
+    "icono": "fa-stethoscope",
+    "gradiente": "linear-gradient(135deg, #2980b9, #1a6fa8)",
+    "colorAcento": "#2980b9",
+    "descripcion": "Atención general de adultos, diagnóstico y derivación a especialistas.",
+    "medicos": [
+      {
+        "id": 201,
+        "nombre": "Dr. Martín Solís",
+        "matricula": "MP 31560",
+        "experiencia": "8 años de experiencia",
+        "atencion": "Lun · Mar · Mié · Jue · Vie",
+        "turnos": ["07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "16:00", "16:30", "17:00"]
+      },
+      {
+        "id": 202,
+        "nombre": "Dra. Valeria Ruiz",
+        "matricula": "MP 40218",
+        "experiencia": "5 años de experiencia",
+        "atencion": "Lun · Mié · Vie",
+        "turnos": ["08:00", "08:30", "09:00", "09:30", "10:00", "14:00", "14:30", "15:00", "15:30"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "especialidad": "Pediatría",
+    "icono": "fa-baby",
+    "gradiente": "linear-gradient(135deg, #f39c12, #e67e22)",
+    "colorAcento": "#f39c12",
+    "descripcion": "Cuidado integral de la salud de niños y adolescentes desde el nacimiento.",
+    "medicos": [
+      {
+        "id": 301,
+        "nombre": "Dra. Ana Villalba",
+        "matricula": "MP 27840",
+        "experiencia": "15 años de experiencia",
+        "atencion": "Lun · Mar · Jue · Vie",
+        "turnos": ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "14:00", "14:30", "15:00"]
+      },
+      {
+        "id": 302,
+        "nombre": "Dr. Federico Mora",
+        "matricula": "MP 33721",
+        "experiencia": "9 años de experiencia",
+        "atencion": "Lun · Mié · Vie",
+        "turnos": ["09:00", "09:30", "10:00", "10:30", "11:00", "15:00", "15:30", "16:00"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "especialidad": "Traumatología",
+    "icono": "fa-bone",
+    "gradiente": "linear-gradient(135deg, #8e44ad, #7d3c98)",
+    "colorAcento": "#8e44ad",
+    "descripcion": "Diagnóstico y tratamiento de lesiones del aparato locomotor y sistema óseo.",
+    "medicos": [
+      {
+        "id": 401,
+        "nombre": "Dr. Roberto Acuña",
+        "matricula": "MP 19003",
+        "experiencia": "18 años de experiencia",
+        "atencion": "Mar · Jue",
+        "turnos": ["08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "14:00", "14:30"]
+      },
+      {
+        "id": 402,
+        "nombre": "Dra. Sofía Herrera",
+        "matricula": "MP 36512",
+        "experiencia": "7 años de experiencia",
+        "atencion": "Lun · Mié · Vie",
+        "turnos": ["09:00", "09:30", "10:00", "10:30", "15:00", "15:30", "16:00"]
+      }
+    ]
+  }
+]
