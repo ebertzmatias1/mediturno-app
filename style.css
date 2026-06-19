@@ -1,23 +1,4 @@
-/*MediTurno - Estilos principales*/
-
-/* Variables de color y tipografía */
-:root {
-  --fondo: #f0f4f8;
-  --blanco: #ffffff;
-  --texto: #1a2332;
-  --texto-suave: #64748b;
-  --texto-claro: #94a3b8;
-  --borde: #e2e8f0;
-  --violeta: #4f46e5;
-  --violeta-oscuro: #3730a3;
-  --violeta-claro: #eef2ff;
-  --verde: #10b981;
-  --sombra: 0 2px 12px rgba(0,0,0,0.08);
-  --sombra-grande: 0 8px 30px rgba(0,0,0,0.12);
-  --radio: 14px;
-  --radio-grande: 20px;
-  --transicion: 0.25s ease;
-}
+/* MediTurno - Estilos */
 
 * {
   box-sizing: border-box;
@@ -26,9 +7,434 @@
 }
 
 body {
-  background-color: var(--fondo);
-  color: var(--texto);
+  background-color: #f0f4f8;
+  color: #1a2332;
   font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background-color: #0f1b2d;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-nombre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.logo-sub {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.header-telefono {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Hero */
+.hero {
+  background-color: #0f1b2d;
+  padding: 2.5rem 2rem;
+}
+
+.hero-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.hero-titulo span { color: #818cf8; }
+
+.hero-subtitulo { color: #94a3b8; }
+
+/* Stepper */
+.stepper-wrap {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 2rem;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.paso-indicador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.4;
+}
+
+.paso-indicador.activo,
+.paso-indicador.completo { opacity: 1; }
+
+.paso-circulo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.paso-indicador.activo .paso-circulo {
+  background: #4f46e5;
+  color: white;
+}
+
+.paso-indicador.completo .paso-circulo {
+  background: #10b981;
+  color: white;
+}
+
+.paso-indicador span {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.paso-linea {
+  flex: 1;
+  height: 2px;
+  background: #e2e8f0;
+  margin: 0 8px;
+  margin-bottom: 20px;
+}
+
+.paso-linea.completo { background: #10b981; }
+
+/* Contenido */
+.contenido-principal {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.seccion-titulo { margin-bottom: 1.5rem; }
+
+.seccion-titulo h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.seccion-titulo p { color: #64748b; }
+
+.oculto { display: none !important; }
+
+/* Cards especialidades */
+.grilla-especialidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card-especialidad {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card-especialidad:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.esp-icono {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.esp-nombre {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.esp-descripcion {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.esp-cantidad {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+/* Cards médicos */
+.grilla-medicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-medico {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  transition: 0.2s;
+}
+
+.card-medico:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.avatar-medico {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.medico-nombre { font-weight: 600; margin-bottom: 2px; }
+.medico-matricula { font-size: 0.72rem; color: #94a3b8; margin-bottom: 6px; }
+.medico-dato { font-size: 0.75rem; color: #64748b; margin-bottom: 3px; }
+.medico-flecha { align-self: center; color: #94a3b8; margin-left: auto; }
+
+/* Días y turnos */
+.subtitulo-seccion {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.dias-contenedor { margin-bottom: 2rem; }
+
+.grilla-dias {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.card-dia {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  min-width: 78px;
+  transition: 0.2s;
+}
+
+.card-dia:hover { border-color: #4f46e5; }
+
+.card-dia.seleccionado {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+}
+
+.dia-nombre { font-size: 0.68rem; font-weight: 600; color: #64748b; }
+.dia-numero { font-size: 1.3rem; font-weight: 700; }
+.dia-mes { font-size: 0.68rem; color: #94a3b8; }
+
+.card-dia.seleccionado .dia-nombre,
+.card-dia.seleccionado .dia-numero,
+.card-dia.seleccionado .dia-mes { color: white; }
+
+.turnos-contenedor { margin-bottom: 2rem; }
+
+.grilla-turnos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.chip-turno {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 2px solid #e2e8f0;
+  background: white;
+  transition: 0.2s;
+}
+
+.chip-turno:hover:not(:disabled) {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.chip-turno.ocupado {
+  color: #94a3b8;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.chip-turno.seleccionado {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+}
+
+/* Botones */
+.btn-volver {
+  background: transparent;
+  border: 1.5px solid #e2e8f0;
+  color: #64748b;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.2s;
+}
+
+.btn-continuar {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-continuar:hover { background: #3730a3; }
+
+/* Comprobante */
+.comprobante {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.comprobante-cabecera {
+  padding: 2rem;
+  text-align: center;
+}
+
+.icono-exito {
+  width: 65px;
+  height: 65px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.7rem;
+  color: white;
+}
+
+.comprobante-titulo { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+.comprobante-subtitulo { color: #64748b; font-size: 0.9rem; margin-bottom: 1rem; }
+
+.numero-turno {
+  display: inline-block;
+  background: #4f46e5;
+  color: white;
+  font-weight: 700;
+  padding: 0.4rem 1.25rem;
+  border-radius: 30px;
+}
+
+.comprobante-cuerpo {
+  padding: 0 2rem 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.fila-detalle {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fila-detalle:last-child { border-bottom: none; }
+
+.detalle-icono {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detalle-etiqueta { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; }
+.detalle-valor { font-size: 0.9rem; font-weight: 500; }
+
+.comprobante-pie {
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.aviso {
+  background: #fef9c3;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: #92400e;
+}
+
+.btn-nuevo-turno {
+  width: 100%;
+  padding: 0.8rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Footer */
+.footer {
+  background: #0f1b2d;
+  text-align: center;
+  padding: 1.5rem;
+  color: #475569;
+  font-size: 0.8rem;
 }
